@@ -1,0 +1,60 @@
+Dependencias
+
+Ignora la carpeta que contiene todos los paquetes descargados por npm/yarn.
+
+/node_modules
+
+Archivos de build
+
+Ignora la carpeta que se genera al compilar el proyecto para producción.
+
+/dist
+/build
+
+Logs
+
+Ignora los archivos de log que generan npm, yarn o pnpm.
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+Archivos de entorno
+
+Ignora los archivos que contienen variables de entorno.
+
+Estos pueden tener información sensible como claves de API.
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+Archivos de caché y temporales de Vite
+
+.vite/
+.next/
+.vercel/
+
+Configuración de editores de código e IDEs
+
+Ignora las carpetas de configuración de VSCode, WebStorm, etc.
+
+.idea/
+.vscode/
+*.suo
+.ntvs
+*.njsproj
+*.sln
+*.sw?
+
+Archivos del sistema operativo
+
+Ignora archivos específicos de macOS y Windows.
+
+.DS_Store
+Thumbs.db

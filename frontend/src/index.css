@@ -1,0 +1,9 @@
+/* Estas son las directivas de Tailwind CSS. */
+/* Le dicen al navegador que cargue las clases de utilidad de Tailwind. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
