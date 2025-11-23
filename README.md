@@ -1,124 +1,315 @@
-# 🌿 AdaptaChef IA — Prototipo funcional
+# 🌿 AdaptaChef IA
 
-Repositorio del prototipo frontend de "AdaptaChef": un chatbot que adapta recetas a restricciones alimentarias. Desarrollo realizado como parte de la Entrega 2 del curso IIC3113.
+> **Transforma cualquier receta a tus necesidades alimentarias con Inteligencia Artificial**
 
----
+AdaptaChef es una aplicación web moderna que utiliza IA generativa (Gemini 2.0) para adaptar recetas de cocina según restricciones alimentarias específicas.
 
-## 📌 Contenido rápido
-- [Estado actual](#estado-actual)
-- [Cómo ejecutar](#cómo-ejecutar)
-- [Cómo probar el mockup](#cómo-probar-el-mockup)
-- [Recetas disponibles](#recetas-disponibles)
-- [Agregar más recetas](#agregar-más-recetas)
-- [Futuras features](#futuras-features)
-- [Stack tecnológico](#stack-tecnológico)
+![React](https://img.shields.io/badge/React-18.2-61dafb) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3-38bdf8) ![Gemini](https://img.shields.io/badge/IA-Gemini%202.0-blue)
 
 ---
 
-## 🔍 Estado actual
+## 💡 Motivación
 
-Prototipo funcional (mockup) de alta fidelidad. El frontend está 100% operativo y simula la experiencia final mediante una base de datos ficticia.
+### El Problema
 
-Características principales:
-- Landing Page profesional
-- Scroll suave (clase `scroll-smooth`)
-- Interfaz de chat completa con React y Tailwind CSS
-- Simulación de IA mediante `frontend/src/data/mockDatabase.js`
-- Lógica de restricciones: Vegano / Sin Gluten / Sin Lactosa
-- Demo controlada con adaptaciones para 12 recetas
+Millones de personas enfrentan restricciones alimentarias diarias por razones de salud, éticas o religiosas. Adaptar recetas manualmente es:
+- ⏰ **Consume tiempo** - Investigar sustitutos adecuados
+- 🤔 **Requiere conocimiento** - Saber qué ingredientes reemplazar
+- 😰 **Genera incertidumbre** - ¿Funcionará la sustitución?
+
+### La Solución
+
+**AdaptaChef** automatiza este proceso usando Inteligencia Artificial:
+- ✅ **Instantáneo** - Respuestas en segundos
+- ✅ **Inteligente** - Sustituciones basadas en ciencia culinaria
+- ✅ **Confiable** - Explicaciones detalladas de cada cambio
+- ✅ **Accesible** - Interfaz simple y moderna
 
 ---
 
-## 🚀 Cómo ejecutar
+## ✨ Características
 
-Requisitos: Node.js
+### 🤖 Inteligencia Artificial
+- **Gemini 2.0 Flash Lite** - Modelo de última generación
+- **Prompts optimizados** - Chef experto en adaptaciones
+- **Respuestas en Markdown** - Formato rico y estructurado
+- **Contexto múltiple** - Combina varias restricciones
 
-1. Clonar el repositorio (SSH recomendado)
-```bash
-git clone git@github.com:anomvlito/adaptachef-proyecto.git
-# o (HTTPS)
-git clone https://github.com/anomvlito/adaptachef-proyecto.git
+### 🎨 Diseño Moderno 2025
+- **Animaciones suaves** - Fade-in, fade-in-up, blob
+- **Glassmorphism** - Efectos de vidrio esmerilado
+- **Micro-interacciones** - Hover effects dinámicos
+- **Modo Oscuro** - Toggle con transición suave de 0.3s
+- **Scrollbar personalizado** - Gradiente verde
+
+### 🔧 Funcionalidades
+
+#### Restricciones Múltiples (7 opciones)
+- 🌱 Vegano
+- 🌾 Sin Gluten
+- 🥛 Sin Lactosa
+- 🥑 Keto
+- 🦴 Paleo
+- 🧂 Bajo en Sodio
+- 🍬 Diabético
+
+#### Sugerencias Inteligentes
+6 recetas populares clickeables para empezar rápido
+
+#### Tutorial Interactivo
+Modal paso a paso que explica cómo usar la app
+
+#### Historial Persistente
+- Guarda automáticamente en localStorage
+- Restaura conversaciones al recargar
+- Mantiene restricciones seleccionadas
+
+#### Exportar y Compartir
+Cada respuesta incluye:
+- 📋 Copiar al portapapeles
+- 📄 Exportar a PDF
+- 💬 Compartir por WhatsApp
+- 🐦 Compartir por Twitter
+
+---
+
+## 🛠 Tecnologías
+
+```json
+{
+  "framework": "React 18.2",
+  "build-tool": "Vite 4.4",
+  "styling": "TailwindCSS 3.3",
+  "markdown": "react-markdown + remark-gfm",
+  "ai-model": "Gemini 2.0 Flash Lite",
+  "storage": "localStorage"
+}
 ```
 
-2. Entrar a la carpeta del frontend
+---
+
+## 📦 Instalación
+
+### Prerrequisitos
+- Node.js 16+
+- npm o yarn
+- API Key de Google Gemini ([Obtener aquí](https://aistudio.google.com/app/apikey))
+
+### Pasos
+
+1. **Clonar el repositorio**
 ```bash
+git clone https://github.com/tu-usuario/adaptachef-proyecto.git
 cd adaptachef-proyecto/frontend
 ```
 
-3. Instalar dependencias
+2. **Instalar dependencias**
 ```bash
 npm install
 ```
 
-4. Iniciar servidor de desarrollo
+3. **Configurar variables de entorno**
+
+Crea un archivo `.env` en la carpeta `frontend`:
+```env
+GOOGLE_API_KEY=tu_api_key_aqui
+```
+
+4. **Iniciar servidor de desarrollo**
 ```bash
 npm run dev
 ```
 
-5. Abrir en el navegador
-http://localhost:5173/
+5. **Abrir en navegador**
+```
+http://localhost:5173
+```
 
 ---
 
-## 🧪 Cómo probar el mockup
+## 🚀 Uso
 
-Flujo de prueba:
-1. Selecciona una restricción: haz clic en "Vegano", "Sin Gluten" o "Sin Lactosa".
-2. Escribe un prompt que incluya el nombre de alguna receta simulada.
-3. Recibe la respuesta adaptada del bot (generada desde la base de datos ficticia).
+### Flujo Básico
 
-Ejemplo:
-- Selecciona: **Vegano**
-- Escribe: `Quiero hacer una lasaña rica`
-- Resultado: recibirás la adaptación vegana para la lasaña.
+1. **Selecciona restricciones** - Una o varias
+2. **Ingresa receta** - Pega o menciona el plato
+3. **Envía** - La IA procesará tu solicitud
+4. **Recibe adaptación** - Receta completa con explicaciones
 
-Si escribes una receta no incluida (ej.: "Sushi" o "Risotto"), el bot devolverá una respuesta genérica indicando que es un prototipo.
+### Ejemplo
 
----
+**Entrada:**
+```
+Restricciones: Vegano + Sin Lactosa
+Receta: Pizza Margarita
+```
 
-## 🍽️ Recetas disponibles en la demo
+**Salida:**
+```markdown
+## INGREDIENTES:
+- Masa sin lácteos
+- Salsa de tomate
+- Queso vegano
+- Albahaca fresca
 
-- Lentejas
-- Pastel de Choclo
-- Cazuela
-- Empanadas
-- Lasaña
-- Porotos Granados
-- Charquicán
-- Pizza
-- Panqueques
-- Kuchen
-- Tacos
-- Sopaipillas
+## PASOS:
+1. Prepara la masa...
+2. Extiende la salsa...
+[etc.]
 
----
-
-## 🛠️ Cómo agregar más recetas
-
-Editar el archivo:
-`frontend/src/data/mockDatabase.js`
-
-Añade una nueva entrada de receta siguiendo el formato existente y reinicia el servidor si es necesario.
+## SUSTITUCIONES:
+- Queso mozzarella → Queso vegano
+- Mantequilla → Aceite de oliva
+```
 
 ---
 
-## 🔭 Futuras features (próximos pasos)
+## 🎨 Modo Oscuro
 
-- Conectar con una IA real (ej., API de Gemini / ChatGPT) para respuestas dinámicas.
-- Gestión de usuarios (registro/login) y guardado de historial.
-- Reconocimiento de recetas por foto o URL.
-- Soporte para múltiples restricciones simultáneas.
-- Perfil nutricional (calorías, proteínas, etc.) de la receta adaptada.
+El modo oscuro está completamente implementado con:
+- ✅ Toggle en el header (ícono sol/luna)
+- ✅ Transición suave de 0.3s en todos los elementos
+- ✅ Persistencia en localStorage
+- ✅ Responsive en toda la aplicación
+- ✅ Colores adaptados para ambos temas
 
----
-
-## 🧩 Stack tecnológico
-
-- Vite — entorno frontend rápido  
-- React — interfaz de usuario  
-- Tailwind CSS — utilidades CSS  
-- JavaScript (ES6+)
+**Activar:** Haz clic en el ícono de sol/luna en la esquina superior derecha del chat.
 
 ---
 
-Abre tu navegador en: http://localhost:5173/
+## 🏗 Arquitectura
+
+```
+frontend/
+├── src/
+│   ├── components/
+│   │   └── ChatInterface.jsx    # Chat principal
+│   ├── services/
+│   │   └── aiChef.js             # Servicio Gemini
+│   ├── App.jsx                   # Landing page
+│   ├── main.jsx                  # Entry point
+│   └── index.css                 # Animaciones CSS
+├── .env                          # Variables de entorno
+├── package.json
+├── tailwind.config.js
+└── vite.config.js
+```
+
+---
+
+## ⚙️ Configuración
+
+### Variables de Entorno
+
+```env
+GOOGLE_API_KEY=tu_api_key_de_gemini
+```
+
+### Vite Config
+
+```javascript
+export default defineConfig({
+  plugins: [react()],
+  envPrefix: 'GOOGLE_', // Permite leer GOOGLE_API_KEY
+});
+```
+
+### Tailwind Config
+
+```javascript
+export default {
+  darkMode: 'class', // Modo oscuro con clase
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+};
+```
+
+---
+
+## 📊 Funcionalidades Implementadas
+
+### ✅ Completadas
+1. ✅ Diseño moderno 2025
+2. ✅ Animaciones personalizadas
+3. ✅ Gemini AI integrado
+4. ✅ Restricciones múltiples (7 opciones)
+5. ✅ Sugerencias de recetas
+6. ✅ Tutorial interactivo
+7. ✅ Renderizado Markdown
+8. ✅ Botón copiar
+9. ✅ Limpiar chat
+10. ✅ Historial persistente
+11. ✅ Exportar a PDF
+12. ✅ Compartir WhatsApp/Twitter
+13. ✅ Modo oscuro completo
+
+---
+
+## 🧪 Testing
+
+### Pruebas Recomendadas
+
+1. **Funcionalidad Básica**
+   - [ ] Seleccionar múltiples restricciones
+   - [ ] Enviar receta
+   - [ ] Recibir respuesta formateada
+
+2. **Persistencia**
+   - [ ] Recargar página
+   - [ ] Verificar historial restaurado
+
+3. **Exportar/Compartir**
+   - [ ] Copiar mensaje
+   - [ ] Exportar a PDF
+   - [ ] Compartir por WhatsApp/Twitter
+
+4. **Modo Oscuro**
+   - [ ] Toggle dark mode
+   - [ ] Verificar transición suave
+   - [ ] Verificar persistencia
+
+---
+
+## 🚧 Roadmap Futuro
+
+### Versión 2.0
+- [ ] Backend con Node.js
+- [ ] Base de datos
+- [ ] Autenticación de usuarios
+- [ ] Favoritos y colecciones
+- [ ] Generación de imágenes con IA
+
+---
+
+## 📄 Licencia
+
+Proyecto creado para el curso **IIC3113** - Uso educativo.
+
+---
+
+## 👨‍💻 Autor
+
+**Proyecto AdaptaChef**
+- Curso: IIC3113
+- Año: 2025
+- Tecnología: React + Gemini IA
+
+---
+
+## 🙏 Agradecimientos
+
+- **Google Gemini** - Por la API de IA generativa
+- **Tailwind CSS** - Por el framework de estilos
+- **React** - Por la librería de UI
+- **Vite** - Por el build tool ultrarrápido
+
+---
+
+<div align="center">
+
+**🌿 AdaptaChef - Tu Receta, Tu Estilo**
+
+Hecho con ❤️ y mucha ☕
+
+</div>
