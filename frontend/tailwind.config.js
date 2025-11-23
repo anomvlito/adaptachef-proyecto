@@ -3,6 +3,7 @@ import defaultTheme from "tailwindcss/defaultTheme"; // Importa el tema por defe
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: 'class', // Habilitar modo oscuro con clase
   theme: {
     extend: {
       // Aquí le decimos a Tailwind que use 'Inter' como fuente principal
@@ -21,5 +22,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
